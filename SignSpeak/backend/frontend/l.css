@@ -1,0 +1,342 @@
+/* ============================
+   SIGNSPEAK - LOGIN PAGE
+   Professional Theme
+   ============================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Custom Theme Colors */
+    --navy-primary: #2C3E50;
+    --navy-light: #34495E;
+    --blue-secondary: #5B7A95;
+    --blue-light: #7B93AB;
+    --beige-accent: #C9B5A0;
+    --beige-light: #D9C9B5;
+    --cream-bg: #F5F0E8;
+    --cream-dark: #EBE5DC;
+    
+    /* Functional Colors */
+    --success: #27AE60;
+    --danger: #E74C3C;
+    
+    /* Neutrals */
+    --dark: #1A1A1A;
+    --gray-700: #4A4A4A;
+    --gray-600: #6A6A6A;
+    --gray-500: #8A8A8A;
+    --gray-400: #AAAAAA;
+    --gray-300: #CCCCCC;
+    --white: #FFFFFF;
+    
+    /* Shadows */
+    --shadow-xl: 0 25px 50px rgba(44, 62, 80, 0.2);
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6;
+    color: var(--dark);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--cream-bg) 50%, var(--blue-secondary) 50%);
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+/* ============================
+   LOGIN CONTAINER
+   ============================ */
+
+.login-container {
+    width: 100%;
+    max-width: 480px;
+    background: var(--white);
+    border-radius: 24px;
+    box-shadow: var(--shadow-xl);
+    overflow: hidden;
+    animation: slideUp 0.6s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================
+   HEADER
+   ============================ */
+
+.login-header {
+    background: linear-gradient(135deg, var(--navy-primary) 0%, var(--blue-secondary) 100%);
+    padding: 48px 36px;
+    text-align: center;
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+}
+
+.login-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 30% 50%, rgba(201, 181, 160, 0.1) 0%, transparent 50%);
+}
+
+.login-header h1 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+.login-header p {
+    font-size: 1rem;
+    opacity: 0.95;
+    position: relative;
+    z-index: 1;
+}
+
+/* ============================
+   BODY
+   ============================ */
+
+.login-body {
+    padding: 44px 44px 36px;
+}
+
+/* ============================
+   ALERTS
+   ============================ */
+
+.alert {
+    padding: 14px 18px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    display: none;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.95rem;
+}
+
+.alert.show {
+    display: flex;
+}
+
+.alert-error {
+    background: rgba(231, 76, 60, 0.1);
+    border-left: 4px solid var(--danger);
+    color: var(--danger);
+}
+
+.alert-success {
+    background: rgba(39, 174, 96, 0.1);
+    border-left: 4px solid var(--success);
+    color: var(--success);
+}
+
+.alert i {
+    font-size: 1.1rem;
+}
+
+/* ============================
+   FORM
+   ============================ */
+
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--navy-primary);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+.input-wrapper i {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gray-400);
+    font-size: 1.1rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 14px 18px 14px 52px;
+    border: 2px solid var(--cream-dark);
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--navy-primary);
+    box-shadow: 0 0 0 4px rgba(44, 62, 80, 0.1);
+}
+
+/* ============================
+   REMEMBER & FORGOT
+   ============================ */
+
+.remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 28px;
+    font-size: 0.9rem;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--gray-700);
+    font-weight: 500;
+}
+
+.remember-me input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: var(--navy-primary);
+}
+
+.forgot-link {
+    color: var(--navy-primary);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.forgot-link:hover {
+    text-decoration: underline;
+    color: var(--blue-secondary);
+}
+
+/* ============================
+   BUTTON
+   ============================ */
+
+.login-btn {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, var(--navy-primary) 0%, var(--blue-secondary) 100%);
+    color: var(--white);
+    border: none;
+    border-radius: 12px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(44, 62, 80, 0.3);
+}
+
+.login-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(44, 62, 80, 0.4);
+}
+
+.login-btn:disabled {
+    background: var(--gray-400);
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* ============================
+   DIVIDER
+   ============================ */
+
+.divider {
+    text-align: center;
+    margin: 28px 0;
+    position: relative;
+}
+
+.divider::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 1px;
+    background: var(--gray-300);
+}
+
+.divider span {
+    background: var(--white);
+    padding: 0 18px;
+    color: var(--gray-500);
+    font-size: 0.9rem;
+    position: relative;
+    font-weight: 600;
+}
+
+/* ============================
+   SIGNUP LINK
+   ============================ */
+
+.signup-link {
+    text-align: center;
+    font-size: 0.95rem;
+    color: var(--gray-700);
+}
+
+.signup-link a {
+    color: var(--navy-primary);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+    color: var(--blue-secondary);
+}
+
+/* ============================
+   RESPONSIVE
+   ============================ */
+
+@media (max-width: 576px) {
+    .login-container {
+        max-width: 100%;
+    }
+
+    .login-header {
+        padding: 40px 28px;
+    }
+
+    .login-header h1 {
+        font-size: 2rem;
+    }
+
+    .login-body {
+        padding: 36px 32px 28px;
+    }
+}

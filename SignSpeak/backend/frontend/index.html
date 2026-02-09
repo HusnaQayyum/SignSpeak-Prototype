@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SignSpeak - AI-powered two-way sign language translator for Pakistani Sign Language (PSL). Break communication barriers with real-time translation.">
+    <title>SignSpeak - Professional Sign Language Translation Platform</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="in.css">
+<style>
+    .urdu-text { font-family: 'Noto Nastaliq Urdu', serif !important; direction: rtl; }
+</style>
+</head>
+<body>
+    <!-- Professional Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="landingPage.html" class="nav-brand">
+                <i class="fas fa-hands-asl-interpreting"></i>
+                SignSpeak
+            </a>
+            <div class="nav-menu">
+                <a href="landingPage.html#feature" class="nav-link">Features</a>
+                <a href="landingPage.html#work" class="nav-link">How It Works</a>
+                <a href="landingPage.html#footer" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-actions">
+                <a href="login.html" class="btn-nav btn-nav-outline">
+                    <i class="fas fa-sign-in-alt"></i>
+                    Login
+                </a>
+                <a href="signup.html" class="btn-nav btn-nav-primary">
+                    Get Started
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>SignSpeak</h1>
+            <p class="hero-subtitle">YOUR WORDS, THEIR SIGNS</p>
+            <div class="status-badge">
+                <span class="status-dot"></span>
+                Real-time Translation Active
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-wrapper">
+        <div class="translation-grid">
+            <!-- LEFT: Sign to Speech -->
+            <div class="left-section">
+                <div class="section-header left">
+                    <div class="section-icon teal">
+                        <i class="fas fa-hands"></i>
+                    </div>
+                    <div class="section-title">
+                        <h2>Sign Language to Speech</h2>
+                        <p>Convert sign language to text and voice</p>
+                    </div>
+                </div>
+
+                <!-- Camera Card -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon teal">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <h3 class="card-title">Live Camera Feed</h3>
+                    </div>
+                    <div class="video-container">
+                        <div class="video-placeholder">
+                            <i class="fas fa-camera"></i>
+                            <span>Camera will activate here</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-teal">
+                        <i class="fas fa-play"></i>
+                        Start Camera
+                    </button>
+                    <span class="info-tag">
+                        <i class="fas fa-shield-alt"></i>
+                        Secure & Private
+                    </span>
+                </div>
+
+                <!-- Recognized Text Card -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon green">
+                            <i class="fas fa-language"></i>
+                        </div>
+                        <h3 class="card-title">Recognized Text</h3>
+                    </div>
+                    <div class="text-output empty">
+                        <i class="fas fa-info-circle"></i>
+                        Translated text will appear here in real-time...
+                    </div>
+                    <span class="info-tag">
+                        <i class="fas fa-bolt"></i>
+                        AI-Powered Recognition
+                    </span>
+                </div>
+
+                <!-- Voice Output Card -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon green">
+                            <i class="fas fa-volume-high"></i>
+                        </div>
+                        <h3 class="card-title">Voice Output</h3>
+                    </div>
+                    <div class="audio-player">
+                        <button class="play-button">
+                            <i class="fas fa-play"></i>
+                        </button>
+                        <div class="waveform"></div>
+                    </div>
+                    <button class="btn btn-green">
+                        <i class="fas fa-play-circle"></i>
+                        Play Voice
+                    </button>
+                    <span class="info-tag">
+                        <i class="fas fa-microphone"></i>
+                        Natural Text-to-Speech
+                    </span>
+                </div>
+            </div>
+
+            <!-- RIGHT: Speech to Sign -->
+            <div class="right-section">
+                <div class="section-header right">
+                    <div class="section-icon orange">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <div class="section-title">
+                        <h2>Speech to Sign Language</h2>
+                        <p>Convert text or voice to sign language</p>
+                    </div>
+                </div>
+
+                <!-- Text Input Card -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon orange">
+                            <i class="fas fa-keyboard"></i>
+                        </div>
+                        <h3 class="card-title">Text Input</h3>
+                    </div>
+                    <textarea class="text-input" placeholder="Type your message..."></textarea>
+                    <button class="btn btn-orange">
+                        <i class="fas fa-exchange-alt"></i>
+                        Translate to Signs
+                    </button>
+                    <span class="info-tag">
+                        <i class="fas fa-globe"></i>
+                        Urdu & English Supported
+                    </span>
+                </div>
+
+                <!-- Voice Recording Card -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon red">
+                            <i class="fas fa-microphone"></i>
+                        </div>
+                        <h3 class="card-title">Voice Recording</h3>
+                    </div>
+                    <div class="recording-status">
+                        <i class="fas fa-circle"></i>
+                        Ready to record
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn btn-green" id="startRecBtn">
+                            <i class="fas fa-circle"></i>
+                            Start Recording
+                        </button>
+                        <button class="btn btn-red" id="stopRecBtn">
+                            <i class="fas fa-stop"></i>
+                            Stop
+                        </button>
+                    </div>
+                    <span class="info-tag">
+                        <i class="fas fa-brain"></i>
+                        Advanced Voice Recognition
+                    </span>
+                </div>
+
+                <!-- Avatar Card -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon orange">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3 class="card-title">Sign Language Avatar</h3>
+                    </div>
+                    <div class="video-container">
+                        <div class="video-placeholder">
+                            <i class="fas fa-person"></i>
+                            <span>AI Avatar will sign here</span>
+                        </div>
+                    </div>
+                    <span class="info-tag">
+                        <i class="fas fa-robot"></i>
+                        3D AI Animation
+                    </span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p><strong>&copy; 2025 SignSpeak</strong> • Built for Inclusive Communication</p>
+            <div class="footer-links">
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#terms">Terms of Service</a>
+                <a href="#support">Support</a>
+                <a href="#docs">Documentation</a>
+                <a href="landingPage.html#footer">Contact</a>
+            </div>
+            <div class="footer-security">
+                <i class="fas fa-shield-alt"></i>
+                End-to-end encrypted • Your privacy protected
+            </div>
+        </div>
+    </footer>
+
+<script src="script.js"></script>
+</body>
+</html>

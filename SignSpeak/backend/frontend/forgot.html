@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Password - SignSpeak</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="f.css">
+</head>
+<body>
+    <div class="forgot-container">
+        <div class="forgot-header">
+            <h1>SignSpeak</h1>
+            <p>Reset your password</p>
+        </div>
+
+        <div class="forgot-body">
+            <div class="info-box">
+                <i class="fas fa-info-circle"></i>
+                <p>Enter your email and we'll send you a link to reset your password.</p>
+            </div>
+
+            <div class="alert alert-error" id="alertMessage">
+                <i class="fas fa-exclamation-circle"></i>
+                <span id="alertText">Please check your information</span>
+            </div>
+
+            <div id="formContainer">
+                <form id="forgotForm">
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <div class="input-wrapper">
+                            <input type="email" id="email" placeholder="Enter your email" required autocomplete="email">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="reset-btn" id="resetBtn">Send Reset Link</button>
+                </form>
+
+                <div class="back-link">
+                    <a href="login.html">
+                        <i class="fas fa-arrow-left"></i>
+                        Back to Login
+                    </a>
+                </div>
+            </div>
+
+            <div class="success-state" id="successState">
+                <i class="fas fa-check-circle"></i>
+                <h3>Check Your Email</h3>
+                <p>We've sent password reset instructions to your email address.</p>
+                <a href="login.html" class="reset-btn" style="display: inline-block; text-decoration: none;">Return to Login</a>
+            </div>
+        </div>
+    </div>
+
+<!-- Load the shared URL config first if it exists, otherwise define it here -->
+<script src="script.js">
+    const API_URL = 'http://localhost:5000/api'; 
+
+    const forgotForm = document.getElementById('forgotForm');
+    if (forgotForm) {
+        forgotForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value.trim();
+            const resetBtn = document.getElementById('resetBtn');
+
+            resetBtn.disabled = true;
+            resetBtn.textContent = 'Sending...';
+
+            try {
+                const resp = await fetch(`${API_URL}/auth/forgot-password`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email: email })
+                });
+                const data = await resp.json();
+
+                if (data.success) {
+                    document.getElementById('formContainer').style.display = 'none';
+                    document.getElementById('successState').classList.add('show');
+                } else {
+                    alert(data.message || "Email not found in our database.");
+                }
+            } catch (e) { 
+                alert("Server Error: Is app.py running?"); 
+            } finally {
+                resetBtn.disabled = false;
+                resetBtn.textContent = 'Send Reset Link';
+            }
+        });
+    }
+</script>
+</body>
+</html>
